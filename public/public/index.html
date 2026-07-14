@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Case Battle USDT</title>
+  <style>
+    body { font-family: Arial; background: #1a1a2e; color: white; text-align: center; padding: 20px; }
+    .case { margin: 20px auto; padding: 25px; border: 2px solid gold; display: inline-block; cursor: pointer; background: #16213e; border-radius: 15px; width: 250px; }
+    .balance { font-size: 26px; margin: 20px; }
+    input, button { padding: 12px; margin: 8px; border-radius: 8px; border: none; }
+    button { background: gold; color: black; font-weight: bold; cursor: pointer; }
+    #result { font-size: 22px; margin-top: 15px; color: gold; }
+    .info { background: #222; padding: 15px; margin: 20px; border-radius: 12px; display: inline-block; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>🔫 Case Battle USDT</h1>
+  <div id="login-section">
+    <input id="username" placeholder="Введи ник" />
+    <button onclick="login()">Войти / Регистрация</button>
+  </div>
+  <div id="game-section" style="display:none;">
+    <div class="balance">💰 Баланс: <span id="balance">0</span> ₽</div>
+    <div class="case" onclick="openCase()">
+      <h3>📦 Кейс Standoff 2</h3>
+      <p>Цена: 50₽ | Шанс до 500₽</p>
+    </div>
+    <div id="result"></div>
+    <hr style="margin:30px;">
+    <div class="info">
+      <h3>Пополнить баланс (USDT TRC20)</h3>
+      <p>Отправь USDT на адрес:<br><b style="word-break: break-all;">ТВОЙ_TRC20_АДРЕС</b></p>
+      <p>В поле Memo/Комментарий укажи <b>свой никнейм</b></p>
+      <p>1 USDT ≈ 90 рублей. Зачисление в течение минуты.</p>
+    </div>
+    <div>
+      <input id="withdrawAmount" type="number" placeholder="Сумма (мин 50₽)">
+      <input id="wallet" placeholder="Твой USDT адрес (TRC20)">
+      <button onclick="requestWithdraw()">Вывести деньги</button>
+    </div>
+    <button onclick="logout()" style="background:#444; color:white;">Выйти</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
