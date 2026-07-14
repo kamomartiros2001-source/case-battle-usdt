@@ -8,7 +8,7 @@ app.use(express.static('public'));
 // ---------- НАСТРОЙКИ ----------
 const ADMIN_LOGIN = 'boss';
 const ADMIN_PASS = 'swilladmin2025';
-const USDT_ADDRESS = 'ТВОЙ_TRC20_АДРЕС_ОТ_TRUSTEE'; // ← замени!
+const USDT_ADDRESS = 'TFvfrf1NkM7iKxNkfuYJuMDEHQ8omXyifk'; //
 const ROUBLES_PER_USDT = 90;
 // --------------------------------
 
@@ -106,7 +106,7 @@ app.post('/withdraw', (req, res) => {
 
 // Проверка USDT транзакций (каждые 30 сек)
 async function checkPayments() {
-  if (!USDT_ADDRESS || USDT_ADDRESS.includes('ТВОЙ')) return;
+  if (!USDT_ADDRESS || USDT_ADDRESS.includes('TFvfrf1NkM7iKxNkfuYJuMDEHQ8omXyifk')) return;
   try {
     const url = `https://api.trongrid.io/v1/accounts/${USDT_ADDRESS}/transactions/trc20?limit=10`;
     const resp = await fetch(url);
